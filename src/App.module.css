@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+/* Header */
+.icon{
+    display: flex;
+    align-items: center;
+    color: #365961;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.icon p {
+    margin-left: 10px;
+}
+
+.headerContainer{
+    max-width: 900px;
+    margin: 40px auto;
+}
+
+/*Principal*/
+
+.container{
+    display: flex;
+    max-width: 905px;
+    margin: auto;
+}
+
+/*Left Side*/
+
+.container .leftSide{
+    flex: 1;
+    margin-right: 40px;
+}
+
+.container .leftSide h1{
+    margin: 0;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #5b96a4;
+}
+
+.container .leftSide p{
+    font-size: 16px;
+    color: #365961;
+    margin-bottom: 40px;
+}
+
+.container .leftSide button{
+    width: 100%;
+    background-color: #5b96a4;
+    border: 0;
+    border-radius: 5px;
+    height: 50px;
+    color: #FFFFFE;
+    cursor: pointer;
+    transition: 0.5s cubic-bezier(.79,.23,.26,.91);
+}
+
+.container .leftSide button:hover{
+    background-color: #365961;
+}
+.container .leftSide button:disabled{
+    background-color: #F0f0f0;
+    color: #5f5f5f;
+    cursor: not-allowed;
+}
+
+.container .leftSide input{
+    width: 100%;
+    border: 0;
+    border-left: 2px solid #365961;
+    outline: 0;
+    padding: 10px 5px;
+    margin-bottom: 20px;
+}
+.container .leftSide input:disabled{
+    opacity: 0.3;
+}
+
+/*Right Side*/
+.container .rightSide{
+    flex: 1;
+    margin-left: 40px;
+    display: flex;
+    transition: 1s cubic-bezier(.79,.23,.26,.91);
+}
+.container .rightSide .grid{
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    height: 390px;
+    overflow-y: scroll;
+}
+.container .rightSide .result{
+    flex: 1;
+    display: flex;
+    font-size: 15px;
+    transition: 1s cubic-bezier(.79,.23,.26,.91);
+}
+.container .rightSide .backArrow{
+    font-size: 40px;
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    margin-top: 160px;
+    margin-left: -20px;
+    color: #5b96a4;
+    background-color: #365961;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.5s cubic-bezier(.79,.23,.26,.91);
+}
+.container .rightSide .backArrow:hover{
+    color: #365961;
+    background-color: #5b96a4;
+}
+
+/*Responsa.*/
+@media (min-width: 426px) and (max-width: 770px){
+    body{
+        overflow-x: hidden!important;
+    }
+    .container{
+        max-width: 90%;
+        padding-bottom: 70px;
+    }
+    .headerContainer{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .container .leftSide{
+        max-width: 70%;
+        margin: auto;
+    }
+    .container .rightSide{
+        position: absolute;
+        margin: 0;
+        right: 0;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        transform: translateX(800px);
+    }
+    .container .rightSide .grid{
+        opacity: 0;
+    }
+    .rightSideMotion{
+        overflow-y: hidden;
+        transform: translateX(0)!important;
+    }
+    .container .rightSide .backArrow{
+        margin-left: 10px;
+        margin-top: 10px;
+        transform: rotate(180deg);
+    }
+}
+@media (max-width: 425px){
+    body{
+        overflow-x: hidden!important;
+    }
+    .container{
+        margin-top: 30px;
+        max-width: 100%;
+        padding-bottom: 70px;
+        text-align: center;
+    }
+    .headerContainer{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .container .leftSide{
+        max-width: 80%;
+        margin: auto;
+    }
+    .container .rightSide{
+        position: absolute;
+        margin: 0;
+        right: 0;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        transform: translateX(800px);
+    }
+    .container .rightSide .grid{
+        opacity: 0;
+    }
+    .rightSideMotion{
+        overflow-y: hidden;
+        transform: translateX(0)!important;
+    }
+    .headerContainer{
+        justify-content: start;
+        margin: 10px 0 10px 30px;
+    }
+    .headerContainer .icon{
+        font-size: 14px;
+    }
+    .leftSide h1{
+        font-size: 25px;
+    }
+    .container .rightSide .backArrow{
+        margin-left: 10px;
+        margin-top: 10px;
+        transform: rotate(180deg);
+    }
+}
